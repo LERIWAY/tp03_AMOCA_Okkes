@@ -4,7 +4,8 @@
 
 export const environment = {
   production: false,
-  catalogue: '/assets/catalogue.json'
+  catalogue: '/assets/catalogue.json',
+  
 };
 
 /*
