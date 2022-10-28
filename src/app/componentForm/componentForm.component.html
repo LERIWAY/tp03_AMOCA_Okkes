@@ -52,6 +52,5 @@
     <button class="envoyer" [disabled]="!valid" (click)="clicChange()">Envoyer le formulaire</button>
 </div>
 
-<app-componentAffichage *ngIf="!cacher" [prenom]="prenom" [nom]="nom" [genre]="genre" [adresse]="adresse"
-    [ville]="ville" [cp]="cp" [pays]="pays" [login]="login" [password]="password" [email]="email" [tel]="tel">
+<app-componentAffichage *ngIf="!cacher" [client]="client">
 </app-componentAffichage>

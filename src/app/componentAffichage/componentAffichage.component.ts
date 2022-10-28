@@ -1,4 +1,5 @@
 import { Component, Output, OnInit, Input, EventEmitter } from '@angular/core';
+import { Client } from '../Class/client';
 
 @Component({
   selector: 'app-componentAffichage',
@@ -8,17 +9,8 @@ import { Component, Output, OnInit, Input, EventEmitter } from '@angular/core';
 export class ComponentAffichageComponent implements OnInit {
 
   constructor() { }
-  @Input() prenom : String = "";
-  @Input() nom : String = "";
-  @Input() genre : String = "";
-  @Input() adresse : String = "";
-  @Input() ville : String = "";
-  @Input() cp : String = "";
-  @Input() pays : String = "";
-  @Input() email : String = "";
-  @Input() tel : String = "";
-  @Input() login : String = "";
-  @Input() password : String = ""; 
+  @Input() client !: Client;
+
   @Output() change: EventEmitter<String> = new EventEmitter<String>();
   
   ngOnInit(): void {

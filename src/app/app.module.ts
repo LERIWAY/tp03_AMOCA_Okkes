@@ -4,12 +4,16 @@ import { BrowserModule } from '@angular/platform-browser';
 import { AppComponent } from './app.component';
 import { ComponentFormComponent } from './componentForm/componentForm.component';
 import { ComponentAffichageComponent } from './componentAffichage/componentAffichage.component';
-import { FormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { FooterComponent } from './footer/footer.component';
 import { HeaderComponent } from './header/header.component';
 import { ValiditeNumberDirective } from './directives/ValiditeNumber/validite-number.directive';
 import { ValiditeStringDirective } from './directives/ValiditeString/validite-string.directive';
 import { TelFormatPipe } from './pipe/tel-format.pipe';
+import { MonserviceService } from './services/monservice.service';
+import { ComponentCatalogueComponent } from './component-catalogue/component-catalogue.component';
+import { HttpClientModule } from '@angular/common/http';
+import { ComponentRechercheComponent } from './component-recherche/component-recherche.component';
 
 @NgModule({
   declarations: [
@@ -20,11 +24,15 @@ import { TelFormatPipe } from './pipe/tel-format.pipe';
     HeaderComponent,
     ValiditeNumberDirective,
     ValiditeStringDirective,
-    TelFormatPipe
+    TelFormatPipe,
+    ComponentCatalogueComponent,
+    ComponentRechercheComponent
   ],
   imports: [
     BrowserModule,
-    FormsModule
+    FormsModule,
+    ReactiveFormsModule,
+    HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent]

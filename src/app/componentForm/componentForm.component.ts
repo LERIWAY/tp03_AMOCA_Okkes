@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { EMPTY, empty } from 'rxjs';
+import { Client } from '../Class/client';
 
 @Component({
   selector: 'app-componentForm',
@@ -30,12 +31,15 @@ export class ComponentFormComponent implements OnInit {
   validationPassword : boolean = true;
   cacherErreur : boolean = true;
 
+  client !: Client;
+
   ngOnInit(): void {
     this.title = "Formulaire de contact";
   }
 
   clicChange () : void {
     if(this.confirmationPassword(this.password, this.confirmPassword) && this.login != ""){
+      this.client = new Client(this.nom, this.prenom, this.adresse, this.cp, this.pays, this.ville, this.tel, this.email, this.genre, this.login, this.password, this.confirmPassword);
       this.cacher = false;
       this.valid = false;
       this.cacherErreur = true;
